@@ -1,18 +1,10 @@
 from datetime import datetime
 import setuptools
-import subprocess
-
-
-def get_git_revision_short_hash():
-    return subprocess.check_output(['git',
-                                    'rev-parse',
-                                    '--short',
-                                    'HEAD']).decode('ascii').strip()
 
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
-version = datetime.now().strftime("%Y.%m.%d") + "+" + get_git_revision_short_hash()
+version = datetime.now().strftime("%Y.%m.%d.%H.%M.%S")
 
 setuptools.setup(
     name="hotreload", # Replace with your own username
