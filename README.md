@@ -1,6 +1,6 @@
 <h1 align="center">
-    <img src="assets/hotreload.py.svg" style="background-color:rgba(0,0,0,0);"
-    height=230 alt="hotreload: hot reload your python code!">
+    <img src="https://raw.githubusercontent.com/say4n/hotreload/master/assets/hotreload.py.svg"
+    style="background-color:rgba(0,0,0,0);" height=230 alt="hotreload: hot reload your python code!">
     <br>
     hotreload.py
     <br>
