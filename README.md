@@ -14,6 +14,10 @@ Run any arbitrary python script every time the code changes in the file.
 
 Get the package from PyPI with `pip3 install hotreload`.
 
+## warning
+
+You shouldn't do this and this can have to [unexpected, unintended](https://news.ycombinator.com/item?id=23516018) repurcusions. Proceed with caution, you have been warned!
+
 ## usage
 
 Say you have script (`script.py`) that you want to run every time the code
