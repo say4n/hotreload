@@ -8,7 +8,6 @@ import threading
 import logging
 
 logger = logging.getLogger("hot_reload")
-
 class Monitor(threading.Thread):
     def __init__(self, loader, frequency = 1):
         super().__init__()
@@ -35,28 +34,36 @@ class Loader:
         self.__name = os.path.splitext(self.source)[0]
         self.module = importlib.import_module(self.__name)
         self.fingerprint = None
-
         self.changed = False
-
         monitor = Monitor(self)
         monitor.start()
+        self.flag=0
 
     def notify(self, fingerprint):
         self.fingerprint = fingerprint
         try:
-            logger.info(f"Fingerprint changed to {fingerprint[:7]}, reloading.")
+            #logger.info(f"Fingerprint changed to {fingerprint[:7]}, reloading.")
             self.module = importlib.reload(self.module)
             self.changed = True
         except Exception as e:
             logger.error(f"Reload failed. {e}")
 
     def has_changed(self):
-        logger.info(f"Loader.has_changed called, self.changed is {self.changed}")
-        if self.changed:
-            self.changed = False
-            return True
-        else:
-            return False
+        try:
+            #logger.info(f"Loader.has_changed called, self.changed is {self.changed}")
+            if self.changed:
+                if self.flag==1:
+                    print("\nReloaded Script:\n")
+                else:
+                    self.flag=1
+                    print("Loaded Script:\n")
+                self.changed = False
+                return True
+            else:
+                return False
+        except KeyboardInterrupt:
+            print("Exit")
+            exit()
 
     def __getattr__(self, attr):
         return getattr(self.module, attr)
