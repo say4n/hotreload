@@ -15,4 +15,3 @@ if __name__ == "__main__":
             # Execute a function from script if it has been modified.
             script.main()
 
-        time.sleep(1)
