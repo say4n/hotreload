@@ -16,7 +16,7 @@ Get the package from PyPI with `pip3 install hotreload`.
 
 ## warning
 
-You shouldn't do this and this can have to [unexpected, unintended](https://news.ycombinator.com/item?id=23516018) repurcusions. Proceed with caution, you have been warned!
+You shouldn't do this and this can have [unexpected, unintended](https://news.ycombinator.com/item?id=23516018) repurcusions. Proceed with caution, you have been warned!
 
 ## usage
 
